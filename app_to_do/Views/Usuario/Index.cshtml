@@ -1,0 +1,42 @@
+﻿@model IEnumerable<app_to_do.Models.UsuarioModel>
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Gestión de Usuarios (ABC)</h2>
+        <a asp-action="Create" class="btn btn-success">➕ Registrar Nuevo Usuario</a>
+    </div>
+
+    <table class="table table-striped table-hover table-bordered shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>Contraseña</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.User</td>
+                        <td>••••••••</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@user.Id" class="btn btn-warning btn-sm me-2">✏️ Editar</a>
+                            <a asp-action="Delete" asp-route-id="@user.Id" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este usuario de MySQL?');">🗑️ Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">No hay usuarios registrados en la base de datos.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
