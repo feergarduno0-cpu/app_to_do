@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Error de Autenticación";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container text-center mt-5">
+    <div class="card shadow p-5 border-0 border-top border-danger border-4">
+        <h1 class="text-danger display-4">Acceso Denegado ❌</h1>
+        <p class="lead mt-3">El usuario o la contraseña son incorrectos.</p>
+        <div class="mt-4">
+            <a asp-action="Login" class="btn btn-danger">Intentar de nuevo</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,141 @@
+﻿/* ==========================================
+   1. CONFIGURACIÓN GENERAL Y MENÚ SUPERIOR
+   ========================================== */
+body {
+    /* Fondo en degradado rosa pastel */
+    background: linear-gradient(135deg, #fbcfe8 0%, #f472b6 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Coloca la barra arriba y el contenido al centro */
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+/* Fuerza a la barra de navegación (app_to_do Inicio Privacidad) a estar en la parte superior */
+header, navbar, .navbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* ==========================================
+   2. TARJETAS / CONTENEDORES (LOGIN Y WELCOME)
+   ========================================== */
+.login-card,
+.welcome-card,
+.card,
+.jumbotron {
+    background: #121212 !important; /* Cuadro negro */
+    color: #ffffff !important; /* Letras blancas */
+    border-radius: 12px;
+    border: 1px solid #333333;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    margin: 60px auto 20px auto;
+    text-align: center;
+}
+
+    .login-header h2,
+    .welcome-card h1,
+    .welcome-card h2,
+    .card h1,
+    .card h2 {
+        color: #ffffff !important;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .text-muted,
+    .welcome-card p,
+    .card p {
+        color: #d1d5db !important; /* Gris claro suave */
+    }
+
+/* ==========================================
+   3. CAMPOS DE TEXTO (USUARIO Y CONTRASEÑA)
+   ========================================== */
+.form-control {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+    border: 1.5px solid #f472b6 !important; /* Delineado rosa pastel siempre visible */
+    border-radius: 6px;
+    text-align: left;
+}
+
+    /* Resplandor al escribir en los recuadros */
+    .form-control:focus {
+        background-color: #1e1e1e !important;
+        color: #ffffff !important;
+        border-color: #f472b6 !important;
+        box-shadow: 0 0 10px rgba(244, 114, 182, 0.6) !important;
+        outline: none;
+    }
+
+/* ==========================================
+   4. BOTONES (INICIAR Y CERRAR SESIÓN)
+   ========================================== */
+.btn-primary,
+.welcome-card .btn,
+.card .btn,
+.btn-secondary,
+.btn-outline-primary {
+    background-color: #1e1e1e !important;
+    border: 1.5px solid #f472b6 !important; /* Borde rosa pastel */
+    color: #ffffff !important;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+    /* Efecto al pasar el cursor (sombra/resplandor rosa) */
+    .btn-primary:hover,
+    .welcome-card .btn:hover,
+    .card .btn:hover,
+    .btn-secondary:hover,
+    .btn-outline-primary:hover {
+        background-color: #2a2a2a !important;
+        border-color: #f472b6 !important;
+        color: #ffffff !important;
+        box-shadow: 0 0 15px rgba(244, 114, 182, 0.8) !important;
+        cursor: pointer;
+    }
+
+/* ==========================================
+   5. MENSJAES DE ERROR / ADVERTENCIA
+   ========================================== */
+.alert-danger,
+.alert-warning,
+.validation-summary-errors,
+.field-validation-error {
+    background-color: #2a1215 !important; /* Fondo oscuro rojizo */
+    color: #f87171 !important; /* Texto rojo/rosa claro */
+    border: 1.5px solid #f472b6 !important; /* Delineado rosa */
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    box-shadow: 0 0 10px rgba(244, 114, 182, 0.2);
+    text-align: left;
+}
+
+    .validation-summary-errors ul {
+        margin: 0;
+        padding-left: 1.2rem;
+    }
+
+span.field-validation-error {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    display: block;
+    margin-top: 0.25rem;
+    color: #f87171 !important;
+}

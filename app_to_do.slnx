@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="app_to_do/app_to_do.csproj" />
+  <Project Path="DogService.WCF/DogService.WCF.csproj" Id="bbf4a542-d7cc-4ba3-853b-b444a175eda1" />
+</Solution>
