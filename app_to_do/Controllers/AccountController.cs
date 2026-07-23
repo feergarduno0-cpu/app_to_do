@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using app_to_do.Models;
 using app_to_do.Services;
+using System.Threading.Tasks;
 
 namespace app_to_do.Controllers
 {
@@ -38,8 +39,25 @@ namespace app_to_do.Controllers
         }
 
         [HttpGet]
-        public IActionResult Welcome()
+        public async Task<IActionResult> Welcome()
         {
+            try
+            {
+                // Instanciar el cliente del servicio WCF agregado
+                DogServiceReference.DogServiceClient client = new DogServiceReference.DogServiceClient();
+
+                // Consumir el método que obtiene la URL del perrito de forma asíncrona
+                var urlPerrito = await client.ObtenerPerritoDelDiaAsync();
+
+                // Enviar la URL a la vista usando ViewBag
+                ViewBag.UrlPerrito = urlPerrito;
+            }
+            catch
+            {
+                // En caso de error de conexión con el WCF, se define como nulo
+                ViewBag.UrlPerrito = null;
+            }
+
             return View();
         }
 

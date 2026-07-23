@@ -7,6 +7,22 @@
     <div class="card shadow p-5 border-0">
         <h1 class="text-success display-4">¡Inicio de sesión exitoso! 🎉</h1>
         <p class="lead mt-3">Has ingresado correctamente al sistema.</p>
+
+        <!-- Bloque agregado para la imagen del servicio WCF -->
+        @if (ViewBag.UrlPerrito != null)
+        {
+            <div class="my-4">
+                <p class="fw-bold text-secondary">Perrito del día (Servicio WCF):</p>
+                <img src="@ViewBag.UrlPerrito" alt="Perrito del día" class="img-fluid rounded shadow-sm" style="max-height: 300px; border: 2px solid #dee2e6;" />
+            </div>
+        }
+        else
+        {
+            <div class="my-4 alert alert-warning d-inline-block">
+                No se pudo cargar la imagen del servicio WCF.
+            </div>
+        }
+
         <div class="mt-4">
             <a asp-action="Login" class="btn btn-outline-secondary">Cerrar Sesión</a>
         </div>
